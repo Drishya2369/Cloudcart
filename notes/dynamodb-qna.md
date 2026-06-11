@@ -153,4 +153,54 @@ Simple Primary Key:
 - Example: orderId alone identifies each order uniquely
 
 Composite Primary Key:
-- Partition Key + So
+- Partition Key + Sort Key TOGETHER
+- Used when items are related and need to be queried together
+- Example: customerId (Partition Key) + orderDate (Sort Key)
+- Allows querying all orders for one customer sorted by date
+
+---
+
+## Q9: What is the difference between Query and Scan?
+
+Query:
+- Searches for items using the Partition Key directly
+- Goes straight to the right shelf 🎯
+- Fast and efficient
+- Always use this in production ✅
+
+Scan:
+- Reads every single item in the entire table
+- Like a CCTV checking every person in the building 📹
+- Slow and expensive
+- The bigger the table — the slower and costlier it gets
+- Avoid in production ❌
+
+Golden Rule:
+✅ Always query
+❌ Never scan in production
+
+---
+
+## Q10: When should you use DynamoDB vs SQL?
+
+Use DynamoDB when:
+- Speed matters more than strict accuracy
+- Data is flexible and unpredictable
+- High volume of reads and writes needed
+- Real-time applications
+- Example: UPI activity logs, gaming, IoT, social media
+
+Use SQL when:
+- Structure and accuracy are critical
+- Data is predictable and consistent
+- Complex relationships between data needed
+- ACID properties required
+- Example: Banking, Finance, Accounting, Payment processing
+
+One line to remember:
+DynamoDB = Speed and Flexibility 🚀
+SQL = Structure and Accuracy 🏦
+
+
+
+
