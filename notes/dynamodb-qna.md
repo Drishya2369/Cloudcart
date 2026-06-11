@@ -63,3 +63,94 @@ Horizontal Scaling:
 One line to remember:
 Vertical = Grow UP (bigger server) ⬆️
 Horizontal = Grow WIDE (more servers) ➡️➡️➡️
+
+## Q4: What is a Table, Item and Attribute in DynamoDB?
+
+Table:
+- The entire collection of data
+- Like a phone book which has the entire list of contacts
+
+Item:
+- One single entry in the table
+- Like one contact in the phone book
+
+Attribute:
+- The individual parameters/fields for each item
+- Like name, phone number, email, address of one contact
+
+---
+
+## Q5: What is a Partition Key and Sort Key?
+
+Partition Key:
+- The most important and UNIQUE attribute in the table
+- No two items can have the same Partition Key
+- Like a contact's phone number — always unique
+- DynamoDB uses it to decide where to store the item
+
+Sort Key:
+- Used when many items belong to the same partition
+- Sorts items within that group
+- Optional — not always needed
+- Like emails received from Rajesh — sorted by date sent
+
+Two types of Primary Keys:
+- Simple Primary Key = Partition Key only
+- Composite Primary Key = Partition Key + Sort Key
+
+---
+
+## Q6: What are the 4 DynamoDB Operations?
+
+put_item:
+- Adds a new item to the table
+- If same Partition Key exists — it overwrites!
+- Like a librarian adding a new book to the library
+
+get_item:
+- Retrieves one specific item using its unique Partition Key
+- Fastest operation in DynamoDB
+- Like a librarian finding a book using its unique ID number
+
+update_item:
+- Updates specific fields of an existing item
+- Does NOT replace the entire item — only what you specify
+- Like a librarian updating the price of an existing book
+
+delete_item:
+- Permanently removes an item from the table
+- Cannot be undone — gone forever!
+- Like a librarian permanently removing a book from the rack
+
+Bonus:
+query — searches by Partition Key — FAST ✅ always use this
+scan — reads entire table — SLOW ❌ avoid in production!
+
+## Q7: What is Schema-less Structure in DynamoDB?
+
+Definition:
+- No fixed structure defined upfront
+- Each item can have different attributes
+- No predefined columns needed
+- New attributes can be added anytime without affecting existing items
+
+Example:
+Item 1: orderId, customerName, amount
+Item 2: orderId, customerName, amount, discount, giftWrap
+Both valid in DynamoDB — no errors, no schema changes needed!
+
+SQL vs DynamoDB on Schema:
+SQL — adding a new column means altering the ENTIRE table. Risky in production!
+DynamoDB — just add new attributes to new items. Old items untouched! ✅
+
+---
+
+## Q8: What is Simple Primary Key vs Composite Primary Key?
+
+Simple Primary Key:
+- Partition Key ONLY
+- Used when each item is completely independent
+- Example: orderId alone identifies each order uniquely
+
+Composite Primary Key:
+- Partition Key + So
