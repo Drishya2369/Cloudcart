@@ -174,4 +174,22 @@ Test the Lambda directly first — isolate code correctness before testing the f
 ---
 
 ## Q10: What was verified end-to-end for Phase 2?
+POST https://5hlc6h2wh4.execute-api.eu-west-1.amazonaws.com/default/order_processor
+Body:
 
+{
+
+"orderId": "ORD-002",
+
+"customerName": "Anita Sharma",
+
+"product": "iPhone 15",
+
+"amount": 80000
+
+}
+Response: 200 OK
+
+{"message": "Order received successfully!", "orderId": "ORD-002"}
+
+Confirmed in DynamoDB — both ORD-001 (console test) and ORD-002 (Postman) present in the Orders table with all attributes saved.
