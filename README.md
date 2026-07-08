@@ -43,4 +43,4 @@ AWS Lambda · DynamoDB · API Gateway · S3 · SQS · SNS · IAM · CloudWatch �
 ## Docs
 - [Infrastructure](infra/README.md)
 - [Notes](notes/)
-## Project Phases
+
