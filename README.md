@@ -13,6 +13,7 @@
 | Phase 2 | Serverless API — Lambda, API Gateway, CloudWatch | ✅ Complete |
 | Phase 3 | Event-Driven Notifications — SQS, DLQ, SNS, Email | ✅ Complete |
 | Phase 4 | GenAI Integration — Amazon Bedrock, CloudFormation | 🔄 In Progress |
+
 ## Phase 1 — What was built
 
 - `Orders` — DynamoDB table (eu-west-1) for storing order records
@@ -38,9 +39,8 @@
 - End-to-end tested via Postman — real email delivery confirmed ✅
 
 ## Tech Stack
-AWS Lambda · DynamoDB · API Gateway · S3 · SQS · SNS · IAM · CloudWatch · Amazon Bedrock (Phase 3+)
+AWS Lambda · DynamoDB · API Gateway · S3 · SQS · SNS · IAM · CloudWatch · Amazon Bedrock (Phase 4)
 
 ## Docs
 - [Infrastructure](infra/README.md)
 - [Notes](notes/)
-
